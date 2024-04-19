@@ -1,3 +1,6 @@
+#ifndef TENSOR_H
+#define TENSOR_H
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -602,7 +605,7 @@ namespace tfg {
             if(data.size() % 2 == 0) {
                 return data.at(0);
             } else {
-                return data
+                return data;
             }
         }
 
@@ -1038,3 +1041,5 @@ namespace tfg {
         }
     };
 }
+
+#endif
