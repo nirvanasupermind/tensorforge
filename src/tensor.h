@@ -8,11 +8,11 @@
 #include <sstream>
 #include <algorithm>
 
-namespace tpp {
-    class TPPException : public std::exception {
+namespace tfg {
+    class TFGException : public std::exception {
     public:
         std::string msg;
-        TPPException(const std::string& msg)
+        TFGException(const std::string& msg)
             : msg(msg) {
         }
         char* what() {
@@ -1033,7 +1033,7 @@ namespace tpp {
 
         void error_check(bool cond, const std::string &msg) const {
             if(!cond) {
-                throw TPPException(msg);
+                throw TFGException(msg);
             }
         }
     };
