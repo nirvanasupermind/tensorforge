@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+#include "../src/tensor.h"
+int main() {
+    cppnp::Tensor<double> x = cppnp::Tensor<double>({{1,2},{3,4}});
+    cppnp::Tensor<double> y = cppnp::Tensor<double>({{4,5},{6,7}});
+    // cppnp::Tensor<double>({2,2,2},{1,2,3,4,5,6,7,8});
+    std::cout << "x = " << x.str() << '\n';
+    std::cout << "x + x = " << (x + x).str() << '\n';
+    std::cout << "x * x = " << (x * x).str() << '\n';
+    std::cout << "x * 0.5 = " << (x * 0.5).str() << '\n';
+    std::cout << "sin(x) = " << x.sin().str() << '\n';
+    std::cout << "cos(x) = " << x.cos().str() << '\n';
+    std::cout << "sqrt(x) = " << x.sqrt().str() << '\n';
+    std::cout << "matmul(x, x) = " << x.matmul(x).str() << '\n'; 
+    std::cout << "matmul(x, y) = " << x.matmul(y).str() << '\n';
+    std::cout << "ones({2, 2}) = " << cppnp::Tensor<double>::ones({2, 2}).str() << '\n';
+}
